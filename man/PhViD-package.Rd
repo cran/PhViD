@@ -2,21 +2,12 @@
 \alias{PhViD-package}
 \alias{PhViD}
 \docType{package}
-\title{Pharmacovigilance signal detection methods extended to the multiple comparison setting.}
+\title{PhViD: a R package for PharmacoVigilance signal Detection}
 
 \description{
-The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. Those functions can be used as standard R functions or through an user friendly interface (\code{PhViD.gui}). For the frequentist methods, the package requires the LBE procedure that can be downloaded from the Bioconductor website \url{http://bioconductor.org/packages/2.3/bioc/html/LBE.html}.
+The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. These functions can be used as standard R functions or through an user friendly interface (\code{PhViD.gui}). For the frequentist methods, the package requires the LBE procedure that can be downloaded from the Bioconductor website \url{http://bioconductor.org/packages/2.3/bioc/html/LBE.html}.
 }
-\details{
-\tabular{ll}{
-Package: \tab PhViD\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2009-02-11\cr
-License: \tab GPL 2\cr
-LazyLoad: \tab yes\cr
-}
-}
+
 \author{
 Ismail Ahmed & Antoine Poncet
 

@@ -34,12 +34,12 @@ N <- DATABASE$N
 L <- DATABASE$L
 
 n11 <- DATA[,1]
-n1. <- DATA[,2] # les marges lignes (effets indésirables)
-n.1 <- DATA[,3] # les marges colonnes (médicaments)
+n1. <- DATA[,2] # marginal drug counts
+n.1 <- DATA[,3] # marginal AE counts
 n10 <- n1. - n11
 n01 <- n.1 - n11
 n00 <- N - (n11+n10+n01)
-E <- n1. * n.1 / N # les effectifs attendus
+E <- n1. * n.1 / N 
 
 if(MIN.n11 > 1) {
   E <- E[n11 >= MIN.n11]
@@ -58,11 +58,13 @@ if(MIN.n11 > 1) {
 
 Nb.Cell <- length(n11)
 
-logPRR <- log( (n11 / (n11 + n01)) /  (n10 / (n10 + n00)) )
-var.logPRR <- 1/n11 + 1/(n11 + n01) + 1/n10 + 1/(n10 + n00)
-pval.logPRR.uni <- 1-pnorm(logPRR,log(RR0),sqrt(var.logPRR))
-petit_rankstat <- (logPRR-log(RR0))/sqrt(var.logPRR) # on va trier les signaux par rapport aux valeurs centrées réduites
-pval.uni <- pval.logPRR.uni
+#logPRR <- log( (n11 / (n11 + n01)) /  (n10 / (n10 + n00)) )
+#var.logPRR <- 1/n11 - 1/(n11 + n01) + 1/n10 - 1/(n10 + n00)
+logPRR <- log( (n11 / (n11 + n10)) /  (n01 / (n01 + n00)) )
+var.logPRR <- 1/n11 - 1/(n11 + n10) + 1/n01 - 1/(n01 + n00)
+pval.logPRR.uni<- 1-pnorm(logPRR,log(RR0),sqrt(var.logPRR))
+petit_rankstat <- (logPRR-log(RR0))/sqrt(var.logPRR) 
+pval.uni       <- pval.logPRR.uni
 
 pval.uni[pval.uni>1] <-1
 pval.uni[pval.uni<0] <-0

@@ -36,14 +36,14 @@ data[,3] <- as.double(DATA.FRAME[,3])
 coln <- names(data) # On stocke le nom des colonnes
 names(data)[3] <-"n11"
 data_cont <- xtabs(n11 ~ .,data=data) # "matrice" de contingence
-n1._mat <- apply(data_cont,1,sum) # marges des lignes
-n.1_mat <- apply(data_cont,2,sum) # marges des colonnes
+n1._mat <- apply(data_cont,1,sum)     # marges des lignes
+n.1_mat <- apply(data_cont,2,sum)     # marges des colonnes
 
 
 ## Nettoyage en fonction du seuil sur les marges
 if (MARGIN.THRES > 1){
   while(sum(n1._mat<MARGIN.THRES)>0 | sum(n.1_mat<MARGIN.THRES)>0){             
-    data_cont <- data_cont[n1._mat >= MARGIN.THRES,] # on supprime les lignes dont la marge n'est pas supérieure au seuil
+    data_cont <- data_cont[n1._mat  >= MARGIN.THRES,] # on supprime les lignes dont la marge n'est pas supérieure au seuil
     data_cont <- data_cont[,n.1_mat >= MARGIN.THRES] # on supprime les colonnes dont la marge n'est pas supérieure au seuil
     n1._mat <- apply(data_cont,1,sum) # on recalcule les marges des lignes...
     n.1_mat <- apply(data_cont,2,sum) # ...et des colonnes

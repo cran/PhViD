@@ -1,0 +1,17 @@
+citHeader("To cite the PhViD package:")
+
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("nlme")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("R package version", meta$Version)
+
+citEntry(
+	entry = "Manual",
+	title = "PhViD: a R package for PharmacoVigilance signal Detection",
+    	author = personList(as.person("I. Ahmed"), as.person("A. Poncet")),
+    	year = year,
+    	note = vers,
+	textVersion = paste("I. Ahmed & A. Poncet (", year,
+"). PhViD: a R package for PharmacoVigilance signal Detection. ",
+vers, ".", sep="")
+)
+

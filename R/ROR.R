@@ -34,8 +34,8 @@ N <- DATABASE$N
 L <- DATABASE$L
 
 n11 <- DATA[,1]
-n1. <- DATA[,2] # les marges lignes (effets indésirables)
-n.1 <- DATA[,3] # les marges colonnes (médicaments)
+n1. <- DATA[,2] 
+n.1 <- DATA[,3] 
 n10 <- n1. - n11
 n01 <- n.1 - n11
 n00 <- N - (n11+n10+n01)

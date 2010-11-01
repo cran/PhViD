@@ -1,0 +1,15 @@
+		CHANGES IN PhViD 1.02
+
+
+BUG FIXES
+
+	o fixed the PRR function. 
+		There was an error in the formula used for the PRR
+		The formula for the variance has also been modified. It is not the one proposed in an Puijenbroek et al. (2002). 
+		var[log(PRR)] = 1/n11 - 1/(n11 + n10) + 1/n01 - 1/(n01 + n00)
+
+           	
+
+
+
+

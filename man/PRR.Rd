@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Proportional Reporting Ratio}
 \description{
-Proportional Reporting Ratio proposed by Evans et al. (2001) extended to the multiple comparison framework.
+Proportional Reporting Ratio proposed by Evans et al. (2001) extended to the multiple comparison framework. Note that the computed variance is different from the one used in van Puijenbroek et al. (2002)
 }
 \usage{
 PRR(DATABASE, RR0 = 1, MIN.n11 = 1, DECISION = 1, 
@@ -42,6 +42,11 @@ Ahmed I, Dalmasso C, Haramburu F, Thiessard F, Broet P, Tubert-Bitter P, False D
 Dalmasso C, Broet P, Moreau T (2005), A simple procedure for estimating the false discovery rate, Bioinformatics, Bioinformatics, 21: 660 - 668. 
 
 Evans SJ, Waller PC, Davis S, Use of Proportional Reporting Ratios (PRRs) for Signal Generation from Spontaneous Adverse Drug Reaction Reports Pharmacoepidemiology and Drug Safety, 2001, 10, 483-486. 
+
+van Puijenbroek EP, Bate A, Leufkens HGM, Lindquist M, Orre R and Egberts ACG, A comparison of measures of disproportionality for signal detection in spontaneous reporting systems for adverse drug reactions, Pharmacoepidemiology and Drug Safety, 2002, 11, 3-10.
+
+
+
 }
 \examples{
 ## start
