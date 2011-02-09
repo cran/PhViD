@@ -34,8 +34,8 @@ N <- DATABASE$N
 L <- DATABASE$L
 
 n11 <- DATA[,1]
-n1. <- DATA[,2] # les marges lignes (effets indésirables)
-n.1 <- DATA[,3] # les marges colonnes (médicaments)
+n1. <- DATA[,2] # les marges lignes (effets indÃ©sirables)
+n.1 <- DATA[,3] # les marges colonnes (mÃ©dicaments)
 n10 <- n1. - n11
 n01 <- n.1 - n11
 n00 <- N - (n11+n10+n01)
@@ -106,7 +106,7 @@ RES$INPUT.PARAM <- data.frame(OR0, MIN.n11, DECISION, DECISION.THRES, MID.PVAL,R
 
 # Presentation of the statistics calculated for each couple
 ##RES$STATISTIC <- data.frame(n11,RankStat)
-##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellés ingénue
+##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellÃ©s ingÃ©nue
 ##colnames(RES$STATISTIC) <- c("Effectif","pvalue")
 
 # STATISTICAL VALUE TO BE CONSIDERED (used in function compare)

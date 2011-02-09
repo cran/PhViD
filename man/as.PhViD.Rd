@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{as.PhViD}
 \alias{as.PhViD}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -26,5 +27,5 @@ as.PhViD(DATA.FRAME, MARGIN.THRES = 1)
   \item{data}{\code{data.frame} that contains the number of spontaneous reports (\code{n11}) and the corresponding marginal counts as well (\code{n1.} and \code{n.1}).}
 }
 
-\author{Ismail Ahmed & Antoine Poncet}
+\author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}
 \keyword{ manip }

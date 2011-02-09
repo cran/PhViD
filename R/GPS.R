@@ -6,8 +6,8 @@ N <- DATABASE$N
 L <- DATABASE$L          
 
 n11 <- DATA[,1] # les nij ou n11 (c'est pareil)
-n1. <- DATA[,2] # les marges lignes (effets indésirables)
-n.1 <- DATA[,3] # les marges colonnes (médicaments)
+n1. <- DATA[,2] # les marges lignes (effets indÃ©sirables)
+n.1 <- DATA[,3] # les marges colonnes (mÃ©dicaments)
 E <- DATA[,2] * DATA[,3] / N # les effectifs attendus      
 
 P_OUT <- TRUE
@@ -33,7 +33,7 @@ if (is.null(PRIOR.PARAM)) {
   
   # alternative tenant compte de la troncature
   if (TRONC == TRUE){
-    tronc <- TRONC.THRES - 1  # si l'utilisateur a décidé de tronquer sa base
+    tronc <- TRONC.THRES - 1  # si l'utilisateur a dÃ©cidÃ© de tronquer sa base
     lik <-function(p,n11,E,tronc){
       sum(-log(
         (p[5] * dnbinom(n11, size=p[1], prob=p[2]/(p[2]+E))

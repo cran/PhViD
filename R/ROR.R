@@ -61,7 +61,7 @@ Nb.Cell <- length(n11)
 logROR <- log(n11 * n00 /(n10 * n01))
 var.logROR <- 1/n11 + 1/n10 + 1/n01 + 1/n00
 pval.logOR.uni <- 1-pnorm(logROR,log(OR0),sqrt(var.logROR))
-petit_rankstat <- (logROR-log(OR0))/sqrt(var.logROR) # on va trier les signaux par rapport aux valeurs centrées réduites
+petit_rankstat <- (logROR-log(OR0))/sqrt(var.logROR) # on va trier les signaux par rapport aux valeurs centrÃ©es rÃ©duites
 pval.uni <- pval.logOR.uni
 
 pval.uni[pval.uni>1] <-1
@@ -107,7 +107,7 @@ RES$INPUT.PARAM <- data.frame(OR0, MIN.n11, DECISION, DECISION.THRES, RANKSTAT)
 
 # Presentation of the statistics calculated for each couple
 ##RES$STATISTIC <- data.frame(n11,PVAL.UNI,LB)
-##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellés ingénue
+##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellÃ©s ingÃ©nue
 ##colnames(RES$STATISTIC) <- c("Effectif","pvalue","Lower Bound")
 
 # STATISTICAL VALUE TO BE CONSIDERED (used in function compare)

@@ -1,14 +1,17 @@
-		CHANGES IN PhViD 1.02
+CHANGES IN PhViD 1.02
 
-
-BUG FIXES
 
 	o fixed the PRR function. 
 		There was an error in the formula used for the PRR
 		The formula for the variance has also been modified. It is not the one proposed in an Puijenbroek et al. (2002). 
 		var[log(PRR)] = 1/n11 - 1/(n11 + n10) + 1/n01 - 1/(n01 + n00)
 
-           	
+
+CHANGES IN PhViD 1.03
+
+	o typo in PhViD.gui: notifications -> reports
+	o typo in GPS help file (thanks to Brock Stewart) log(lambda,2)     
+	o dealing with encodage issues. All files are encoded in UTF-8               	
 
 
 

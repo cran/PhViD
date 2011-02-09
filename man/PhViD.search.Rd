@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{PhViD.search}
 \alias{PhViD.search}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -24,5 +25,5 @@ PhViD.search(RESULT, DRUG = NULL, EVENT = NULL)
   \item{LIST}{It is a \code{dataframe} that contains the labels, the counts, the expected counts, the value of the statistic of interest, the rank and the estimated FDR for each couple.}
 }
 
-\author{Antoine Poncet & Ismail Ahmed}
+\author{Antoine Poncet & \enc{Ismaïl}{Ismail} Ahmed}
 \keyword{ manip }

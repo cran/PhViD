@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{RFET}
 \alias{RFET}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -34,9 +35,9 @@ The FDR is estimated with the LBE procedure proposed by Dalmasso et al. (2005).
   \item{INPUT.PARAM}{Parameters entered in the function.}
 }
 \references{
-Ahmed I, Dalmasso C, Haramburu F, Thiessard F, Broet P, Tubert-Bitter P, False Discovery Rate Estimation for Frequentist Pharmacovigilance Signal Detection Methods, Biometrics, accepted.
+Ahmed I, Dalmasso C, Haramburu F, Thiessard F, \enc{Broët}{Broet} P, Tubert-Bitter P. False discovery rate estimation for frequentist pharmacovigilance signal detection methods. Biometrics. 2010 Mar;66(1):301-309. 
 
-Dalmasso C, Broet P, Moreau T (2005), A simple procedure for estimating the false discovery rate, Bioinformatics, Bioinformatics, 21: 660 - 668. 
+Dalmasso C, \enc{Broët}{Broet} P, Moreau T (2005), A simple procedure for estimating the false discovery rate, Bioinformatics, Bioinformatics, 21: 660 - 668.
 
 }
 \examples{
@@ -47,5 +48,5 @@ Dalmasso C, Broet P, Moreau T (2005), A simple procedure for estimating the fals
 ## end
 }
 
-\author{Ismail Ahmed & Antoine Poncet}
+\author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}
 \keyword{ htest }

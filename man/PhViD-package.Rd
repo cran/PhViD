@@ -1,22 +1,27 @@
 \name{PhViD-package}
+\encoding{UTF-8}
 \alias{PhViD-package}
 \alias{PhViD}
 \docType{package}
 \title{PhViD: a R package for PharmacoVigilance signal Detection}
-
 \description{
-The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. These functions can be used as standard R functions or through an user friendly interface (\code{PhViD.gui}). For the frequentist methods, the package requires the LBE procedure that can be downloaded from the Bioconductor website \url{http://bioconductor.org/packages/2.3/bioc/html/LBE.html}.
+The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. These functions can be used as standard R functions or through an user friendly interface (\code{PhViD.gui}). For the frequentist methods, the package requires the LBE procedure that is stored in the Bioconductor website \url{http://bioconductor.org/}. LBE can be installed by entering \cr
+\code{source("http://bioconductor.org/biocLite.R")} \cr
+\code{biocLite("LBE")} \cr
+in the R console.
 }
 
 \author{
-Ismail Ahmed & Antoine Poncet
+\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet
 
-Maintainer: Ismail Ahmed <ismail.ahmed@inserm.fr>
+Maintainer: \enc{Ismaïl}{Ismail} Ahmed <ismail.ahmed@inserm.fr>
 }
 \references{
-Ahmed I, Dalmasso C, Haramburu F, Thiessard F, Broet P, Tubert-Bitter P, False Discovery Rate Estimation for Frequentist Pharmacovigilance Signal Detection Methods, Biometrics, accepted. 
+Ahmed I, Thiessard F, Miremont-Salamé G, Bégaud B, Tubert-Bitter P. Pharmacovigilance data mining with methods based on false discovery rates: a comparative simulation study. Clin. Pharmacol. Ther. 2010 Oct;88(4):492-498. 
 
-Ahmed I, Haramburu F, Fourrier-Reglat A, Thiessard F,  Kreft-Jais C, Miremont-Salame G, Begaud B, Tubert-Bitter P, Bayesian Pharmacovigilance Signal Detection Methods Revisited in a Multiple Comparison Setting, Statistics in Medicine, accepted. 
+Ahmed I, Dalmasso C, Haramburu F, Thiessard F, \enc{Broët}{Broet} P, Tubert-Bitter P. False discovery rate estimation for frequentist pharmacovigilance signal detection methods. Biometrics. 2010 Mar;66(1):301-309. 
+
+Ahmed I, Haramburu F, Fourrier-Réglat A, Thiessard F, Kreft-Jais C, Miremont-Salamé G, Bégaud B, Tubert-Bitter P. Bayesian pharmacovigilance signal detection methods revisited in a multiple comparison setting. Stat Med. 2009 Jun 15;28(13):1774-1792. 
 
 Bate A, Lindquist M, Edwards IR, Olsson S, Orre R, Lansner A, De Freitas RM. A Bayesian Neural Network Method for Adverse Drug Reaction Signal Generation European Journal of Clinical Pharmacology, 1998, 54, 315-321.  
 

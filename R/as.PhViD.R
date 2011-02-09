@@ -1,14 +1,14 @@
 `as.PhViD` <-
 function(DATA.FRAME,MARGIN.THRES=1){
-## Fonction qui va permettre de calculer le nombre de notifications pour chaque "médicament" et "effet indésirable".
+## Fonction qui va permettre de calculer le nombre de notifications pour chaque "mÃ©dicament" et "effet indÃ©sirable".
 
 ## FILE :         Emplacement + nom du fichier
-##		            Les données doivent contenir 3 colonnes 
+##		            Les donnÃ©es doivent contenir 3 colonnes 
 ##			           - le label ATC
 ##			           - le label meddra
 ##			           - le nombre de notifications		
 
-## MARGIN.THRES :  Seuil sur les marges. on peut considérer uniquement les lignes et colonnes qui dépassent
+## MARGIN.THRES :  Seuil sur les marges. on peut considÃ©rer uniquement les lignes et colonnes qui dÃ©passent
 ##                un certain effectif
 
 ## FILE="ATC7-pt.csv"
@@ -43,29 +43,29 @@ n.1_mat <- apply(data_cont,2,sum)     # marges des colonnes
 ## Nettoyage en fonction du seuil sur les marges
 if (MARGIN.THRES > 1){
   while(sum(n1._mat<MARGIN.THRES)>0 | sum(n.1_mat<MARGIN.THRES)>0){             
-    data_cont <- data_cont[n1._mat  >= MARGIN.THRES,] # on supprime les lignes dont la marge n'est pas supérieure au seuil
-    data_cont <- data_cont[,n.1_mat >= MARGIN.THRES] # on supprime les colonnes dont la marge n'est pas supérieure au seuil
+    data_cont <- data_cont[n1._mat  >= MARGIN.THRES,] # on supprime les lignes dont la marge n'est pas supÃ©rieure au seuil
+    data_cont <- data_cont[,n.1_mat >= MARGIN.THRES] # on supprime les colonnes dont la marge n'est pas supÃ©rieure au seuil
     n1._mat <- apply(data_cont,1,sum) # on recalcule les marges des lignes...
     n.1_mat <- apply(data_cont,2,sum) # ...et des colonnes
   }
 }
 ##---------------------------------------
-coord <- which(data_cont != 0, arr.ind=TRUE) # on récupère les coordonnées des notifications (traduit par un nombre >=1 dans la matrice data_cont)
-coord <- coord[order(coord[,1]),] # la fonction which les a ordonnées par colonnes. On les veut ordonnées par lignes
+coord <- which(data_cont != 0, arr.ind=TRUE) # on rÃ©cupÃ¨re les coordonnÃ©es des notifications (traduit par un nombre >=1 dans la matrice data_cont)
+coord <- coord[order(coord[,1]),] # la fonction which les a ordonnÃ©es par colonnes. On les veut ordonnÃ©es par lignes
 
 #data_net <- cbind(rownames(data_cont)[coord[,1]],colnames(data_cont)[coord[,2]],data_cont[coord]) # on compile les
-#libellés des médicaments, des effets indésirables et des notifications après le nettoyage sur les marges. (si pas de
-#nettoyage, cela revient à prendre data)
+#libellÃ©s des mÃ©dicaments, des effets indÃ©sirables et des notifications aprÃ¨s le nettoyage sur les marges. (si pas de
+#nettoyage, cela revient Ã  prendre data)
 
-# on récupère les nouvelles dimensions de la matrice
+# on rÃ©cupÃ¨re les nouvelles dimensions de la matrice
 Nb_n1. <- length(n1._mat) # nombre de lignes
 Nb_n.1 <- length(n.1_mat) # nombre de colonnes
 
-libel.medoc <- rownames(data_cont)[coord[,1]] # on conserve les libellés des médicaments qui restent
-libel.effet <- colnames(data_cont)[coord[,2]] # on conserve les libellés des effets indésirables qui restent
+libel.medoc <- rownames(data_cont)[coord[,1]] # on conserve les libellÃ©s des mÃ©dicaments qui restent
+libel.effet <- colnames(data_cont)[coord[,2]] # on conserve les libellÃ©s des effets indÃ©sirables qui restent
 n11 <- data_cont[coord] 
 N <- sum(n11) # le nombre total de notifications
-n1. <- n1._mat[coord[,1]] # on affecte à chaque notification sa marge "ligne"...
+n1. <- n1._mat[coord[,1]] # on affecte Ã  chaque notification sa marge "ligne"...
 n.1 <- n.1_mat[coord[,2]] # ... et sa marge "colonne"
 
 
@@ -73,7 +73,7 @@ RES <- vector(mode="list")
 #RES$PARAM <- data.frame(FILE,MARGIN.THRES) # input parameters # FILE, not necessary
 RES$L <- data.frame(libel.medoc,libel.effet)
 colnames(RES$L) <- coln[1:2]
-RES$data <- cbind(n11,n1.,n.1) # matrice "équivalente" à la matrice de départ avec en plus les marges et effectifs attendus
+RES$data <- cbind(n11,n1.,n.1) # matrice "Ã©quivalente" Ã  la matrice de dÃ©part avec en plus les marges et effectifs attendus
 rownames(RES$data) <- paste(libel.medoc,libel.effet)
 RES$N <- N # nb de notifications total
 RES

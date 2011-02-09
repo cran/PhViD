@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{GPS}
 \alias{GPS}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -30,7 +31,7 @@ beta2 = 1.8, w = 0.1), PRIOR.PARAM = NULL)
 
                  2 = 5\% quantile of the posterior distribution of \eqn{\lambda}{lambda}
 
-                 3 = Posterior Expectation of \eqn{\lambda}{lambda}} 
+                 3 = Posterior Expectation of \eqn{\log_2(\lambda)}{log(lambda,2)}} 
   \item{TRONC}{If TRUE, only the data with at least \code{TRONC.THRES} notifications are considered in the calculation of the hyper parameters and the likelihood is a product of mixture of two negative binomial truncated by \code{TRONC.THRES-1}. By default, \code{TRONC=F}}
   \item{TRONC.THRES}{See \code{TRONC} }
   \item{PRIOR.INIT}{Vector of initialization of the prior parameters \eqn{(\alpha_1, \beta_1, \alpha_2, \beta_2, w)}{(alpha1, beta1, alpha2, beta2, w)}. By default, \code{PRIOR.INIT} \eqn{= c(\alpha_1 = 0.2, \beta_1 = 0.06, \alpha_2 = 1.4, \beta_2 = 1.8, w = 0.1)}{= c(alpha1 = 0.2, beta1 = 0.06, alpha2 = 1.4, beta2 = 1.8, w = 0.1)}, ie the prior parameters found in DuMouchel (1999).}
@@ -47,7 +48,7 @@ Each observed count \eqn{n_{11}}{n11} is assumed to be drawn from a Poisson dist
   \item{PARAM}{A list that contains the prior hyper parameters (\code{PRIOR.PARAM}). Additionally if \code{PRIOR.PARAM=NULL}, it also contains the prior hyper parameters initialization (\code{PRIOR.INIT}) and the convergence code (see \code{nlm()}).}
 }
 \references{
-Ahmed I, Haramburu F, Fourrier-Reglat A, Thiessard F,  Kreft-Jais C, Miremont-Salame G, Begaud B, Tubert-Bitter P. Bayesian Pharmacovigilance Signal Detection Methods Revisited in a Multiple Comparison Setting, Statistics in Medicine, accepted.
+Ahmed I, Haramburu F, Fourrier-Réglat A, Thiessard F, Kreft-Jais C, Miremont-Salamé G, Bégaud B, Tubert-Bitter P. Bayesian pharmacovigilance signal detection methods revisited in a multiple comparison setting. Stat Med. 2009 Jun 15;28(13):1774-1792. 
 
 DuMouchel W, Bayesian Data Mining in Large Frequency Tables, with an Application to the FDA Spontaneous Reporting System, The American Statistician, 1999, 53, 177-190.
 
@@ -67,6 +68,6 @@ Szarfman A, Machado S, O'Neill R, Use of Screening Algorithms and Computer Syste
 #res2 <- GPS(PhViDdata, DECISION = 3, DECISION.THRES = 2, RANKSTAT = 2)
 ## end
 }
-\author{Ismail Ahmed & Antoine Poncet}
+\author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}
 \keyword{ htest }
 

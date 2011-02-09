@@ -16,8 +16,8 @@ seuil.fnc <- function() {
 
 #########                   fonction Select_Method                      ########
 Select_Method <- function() {
-  # création de la liste déroulante pour le choix de la méthode
-  tclRequire("BWidget") # nécessaire pour créer une liste déroulante
+  # crÃ©ation de la liste dÃ©roulante pour le choix de la mÃ©thode
+  tclRequire("BWidget") # nÃ©cessaire pour crÃ©er une liste dÃ©roulante
   tmethod <- tktoplevel()
   tkwm.title(tmethod, "Select Method")
   tkwm.deiconify(tmethod)
@@ -93,11 +93,11 @@ Method <- function() {
   EVENTval <- tclVar("")
   DRUGval <- tclVar("")
   result <- NULL
-  assign("RESULT",result,inherits=FALSE,envir=.GlobalEnv) # on réinitialise RESULT, METHOD
+  assign("RESULT",result,inherits=FALSE,envir=.GlobalEnv) # on rÃ©initialise RESULT, METHOD
   method <- NULL
-  assign("METHOD",method,inherits=FALSE,envir=.GlobalEnv) # et FOUND à NULL dès qu'on ouvre
+  assign("METHOD",method,inherits=FALSE,envir=.GlobalEnv) # et FOUND Ã  NULL dÃ¨s qu'on ouvre
   found <- NULL
-  assign("FOUND",found,inherits=FALSE,envir=.GlobalEnv)   # une nouvelle fenêtre méthode
+  assign("FOUND",found,inherits=FALSE,envir=.GlobalEnv)   # une nouvelle fenÃªtre mÃ©thode
   text.FDR <- "FDR"
   title.FDR <- "GPS FDR & FNR"
 
@@ -190,15 +190,15 @@ Method <- function() {
   #  tkgrid.configure(xscr,sticky="ew")
   #  tkinsert(txt,"end",paste("ABOUT CHARACTERISTICS\n\n- RR (or OR) must be a positive double. It represents the value",
   #    "of the risk\nyou want to consider. By default, RR=1.\n\n"))
-  #  tkinsert(txt,"end",paste("- Number of notifications : you may prefer to focus your interest only on\nsignals which",
-  #    "have at least a certain number on notifications.\nIt does not alter the calculs carried out by the method.\n\n"))
+  #  tkinsert(txt,"end",paste("- Number of reports : you may prefer to focus your interest only on\nsignals which",
+  #    "have at least a certain number on reports.\nIt does not alter the calculs carried out by the method.\n\n"))
   #  tkconfigure(txt, state="disabled")
   #  tkfocus(txt)
   #}
     
   execute.fnc <- function() {
       #rm(RESULT,METHOD)
-      if (is.null(DATA)) postMsg("Error: notifications haven't been read yet.\n")
+      if (is.null(DATA)) postMsg("Error: spontaneous reports haven't been read yet.\n")
       else {
           RR0 <- as.numeric(tclvalue(RRval))
           MIN.n11 <- as.numeric(tclvalue(n11))
@@ -268,7 +268,7 @@ Method <- function() {
   }
     
   SaveOutput.fnc <- function () {
-    #if (as.character(Choice)!=METHOD) RESULT <- NULL # pour prévenir des erreurs d'une méthode à l'autre
+    #if (as.character(Choice)!=METHOD) RESULT <- NULL # pour prÃ©venir des erreurs d'une mÃ©thode Ã  l'autre
     RESULT <- get("RESULT", envir = .GlobalEnv)
     if (is.null(RESULT)) postMsg("Error: method hasn't been computed yet.\n")
     else if (class(RESULT) == "list") {
@@ -335,8 +335,8 @@ Method <- function() {
           #plot(RESULT$COMPARE$STAT[order(RESULT$COMPARE$STAT)],(RESULT$STATISTIC[,1])[order(RESULT$COMPARE$STAT)],
 	  plot(RESULT$ALLSIGNALS[,5],RESULT$ALLSIGNALS[,3],
             log="y",pch=".",
-            main=paste(METHOD, "\n Number of notifications according to ",statint.lbl,sep=""),
-            xlab="statistic of interest",ylab="number of notifications")
+            main=paste(METHOD, "\n Number of reports according to ",statint.lbl,sep=""),
+            xlab="statistic of interest",ylab="number of reports")
         }
       }
       if (METHOD == "GPS" | METHOD == "BCPNN") {
@@ -391,8 +391,8 @@ Method <- function() {
           #plot(RESULT$COMPARE$STAT[order(RESULT$COMPARE$STAT)],(RESULT$STATISTIC[,1])[order(RESULT$COMPARE$STAT)],
 	  plot(RESULT$ALLSIGNALS[,5],RESULT$ALLSIGNALS[,3],
             log="y", pch=".",
-            main=paste(METHOD, "\n Number of notifications according to ",statint.lbl,sep=""),
-            xlab="statistic of interest",ylab="number of notifications")
+            main=paste(METHOD, "\n Number of reports according to ",statint.lbl,sep=""),
+            xlab="statistic of interest",ylab="number of reports")
         }
       }
     }
@@ -403,11 +403,11 @@ Method <- function() {
   }
   
   search.fnc <- function() {
-    #if (as.character(Choice)!=METHOD) RESULT <- NULL # pour prévenir des erreurs d'une méthode à l'autre
+    #if (as.character(Choice)!=METHOD) RESULT <- NULL # pour prÃ©venir des erreurs d'une mÃ©thode Ã  l'autre
     RESULT <- get("RESULT", envir = .GlobalEnv)
     if (is.null(RESULT)) postMsg("Error: method hasn't been computed yet.\n")
     else {
-      #function pour créer la table de sortie
+      #function pour crÃ©er la table de sortie
       displayInTable <- function(tclarray,title="Research result",height=-1,width=-1,nrow=-1,ncol=-1) {
         #require(tcltk)
         ttresearch <- tktoplevel()
@@ -430,7 +430,7 @@ Method <- function() {
       if (as.character(tclvalue(DRUGval)) != "") drug.code <- as.character(tclvalue(DRUGval))
       if (as.character(tclvalue(EVENTval)) != "") event.code <- as.character(tclvalue(EVENTval))
       FIND <- PhViD.search(RESULT = RESULT, DRUG = drug.code, EVENT = event.code)
-      # batterie de test pour comprendre où est le problème
+      # batterie de test pour comprendre oÃ¹ est le problÃ¨me
       if (is.null(FIND$DRUG) & is.null(FIND$EVENT)) postMsg("Error: you have to specify at least a drug or an event.\n")
       else if ((is.null(FIND$DRUG)==FALSE & is.null(FIND$EVENT)==FALSE) & (FIND$EXIST_DRUG == FALSE & FIND$EXIST_EVENT == FALSE)) postMsg("Error: no such drug and event found in the database.\n")
       else if ((is.null(FIND$DRUG)==FALSE & is.null(FIND$EVENT)==FALSE) & (FIND$EXIST_DRUG == FALSE)) postMsg("Error: no such drug found in the database.\n")
@@ -440,7 +440,7 @@ Method <- function() {
       else if (FIND$EXIST_EVENT == FALSE) postMsg("Error: no such event found in the database.\n")
       else {
         FIND$LIST[,4] <- round(FIND$LIST[,4],2)           # on limite le nb de
-        FIND$LIST[,c(5,7)] <- round(FIND$LIST[,c(5,7)],3) # décimales à afficher
+        FIND$LIST[,c(5,7)] <- round(FIND$LIST[,c(5,7)],3) # dÃ©cimales Ã  afficher
         tclRequire("Tktable")
         L <- dim(FIND$LIST)[1] + 1
         C <- dim(FIND$LIST)[2]
@@ -517,7 +517,7 @@ Method <- function() {
           tkpack(RR, side = "left")
         tkpack(rr.frm, side = "top", expand = TRUE)
       n11.frm <- tkframe (characterictics.frm)
-          n11.lbl <- tklabel(n11.frm, text = "Minimum number of notifications for a couple to be potentially considered  as a signal", anchor = "e")
+          n11.lbl <- tklabel(n11.frm, text = "Minimum number of reports for a couple to be potentially considered  as a signal", anchor = "e")
           n11.ety <- tkentry(n11.frm, textvariable = n11, width = 7, justify = "center")
           tkpack(n11.lbl, side = "left")
           tkpack(n11.ety, side = "left")
@@ -786,7 +786,7 @@ Method <- function() {
   }
   
     statint.frm <- tkframe(graphics.left.frm, padx = 10)
-        statint.lbl <- tklabel(statint.frm, text = "Graphical representation of the Statistic of interest according to the number of notifications", anchor = "e")
+        statint.lbl <- tklabel(statint.frm, text = "Graphical representation of the Statistic of interest according to the number of reports", anchor = "e")
         statint <- tkcheckbutton(statint.frm)
         statint.val <- tclVar("0")
         tkconfigure(statint, variable = statint.val)
@@ -813,7 +813,7 @@ Method <- function() {
   #tkpack(tklabel(research.frm,
   #  text = paste("You may want to know the rank of a particular notification. Enter in the following boxes the drug and event\n",
   #  "codes as it appear in the base. General statistics (as FDR, rank, expected number...) of the choosen notification(s) will be showed.\n",
-  #  "\n If you choose to enter only the drug code, you will generate the General statistics for all notifications where the drug code appears.\n",
+  #  "\n If you choose to enter only the drug code, you will generate the General statistics for all reports where the drug code appears.\n",
   #  "Reciprocity is true, if you enter only the event code you will generate the list of the drugs associated with this event.")
   #  ))
   tkpack(tklabel(research.frm,
@@ -910,7 +910,7 @@ readFile <- function() {
 
     top.frm <- tkframe(tt, borderwidth = 20)
     pharmaco.frm <- tkframe(top.frm, relief = "raised", bd = 1)
-        tkpack(tklabel(pharmaco.frm, text = "Read notifications:"), anchor = "w")
+        tkpack(tklabel(pharmaco.frm, text = "Import spontaneous report file:"), anchor = "w")
 
         readdata.frm <- tkframe(pharmaco.frm, relief = "groove", bd = 4)
             inFileName.frm <- tkframe(readdata.frm)

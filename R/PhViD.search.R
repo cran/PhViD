@@ -1,6 +1,6 @@
 `PhViD.search` <-
 function(RESULT,DRUG=NULL,EVENT=NULL) {
-# fonction permettant de rechercher les résultats pour un médicament, un effet indésirable ou les deux
+# fonction permettant de rechercher les rÃ©sultats pour un mÃ©dicament, un effet indÃ©sirable ou les deux
 
 
 RESULT$ALLSIGNALS[,1]<-as.character(RESULT$ALLSIGNALS[,1])

@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{BCPNN}
 \alias{BCPNN}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -40,7 +41,7 @@ RANKSTAT = 1, MC = FALSE, NB.MC = 10000)
   \item{INPUT.PARAM}{Parameters entered in the function.}
 }
 \references{
-Ahmed I, Haramburu F, Fourrier-Reglat A, Thiessard F,  Kreft-Jais C, Miremont-Salame G, Begaud B, Tubert-Bitter P. Bayesian Pharmacovigilance Signal Detection Methods Revisited in a Multiple Comparison Setting, Statistics in Medicine, accepted.
+Ahmed I, Haramburu F, Fourrier-Réglat A, Thiessard F, Kreft-Jais C, Miremont-Salamé G, Bégaud B, Tubert-Bitter P. Bayesian pharmacovigilance signal detection methods revisited in a multiple comparison setting. Stat Med. 2009 Jun 15;28(13):1774-1792. 
 
 Bate A, Lindquist M, Edwards IR, Olsson S, Orre R, Lansner A, De Freitas RM, A Bayesian Neural Network Method for Adverse Drug Reaction Signal Generation European Journal of Clinical Pharmacology, 1998, 54, 315-321.
 
@@ -55,5 +56,5 @@ PhViDdata <- as.PhViD(PhViDdata.frame)
 res <- BCPNN(PhViDdata)
 ## end
 }
-\author{Ismail Ahmed & Antoine Poncet}
+\author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}
 \keyword{ htest }

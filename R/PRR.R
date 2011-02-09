@@ -109,7 +109,7 @@ RES$INPUT.PARAM <- data.frame(RR0, MIN.n11, DECISION, DECISION.THRES, RANKSTAT)
 
 # Presentation of the statistics calculated for each couple
 ##RES$STATISTIC <- data.frame(n11,PVAL.UNI,LB)
-##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellés ingénue
+##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellÃ©s ingÃ©nue
 ##colnames(RES$STATISTIC) <- c("Effectif","pvalue","Lower Bound")
 
 # STATISTICAL VALUE TO BE CONSIDERED (used in function compare)

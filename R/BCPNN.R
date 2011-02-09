@@ -60,7 +60,7 @@ if (MC == TRUE) { # Advanced option MC
   q.0 <- (N - n.1 +.5)/(N +1)
   q0. <- (N - n1. +.5)/(N +1)
   
-  a.. <- .5/(q1.*q.1) ## le .5 devrait pouvoir être changé
+  a.. <- .5/(q1.*q.1) ## le .5 devrait pouvoir Ãªtre changÃ©
   
   a11 <- q1.*q.1* a..
   a10 <- q1.*q.0* a..
@@ -129,7 +129,7 @@ RES$INPUT.PARAM <- data.frame(RR0,MIN.n11,DECISION,DECISION.THRES,RANKSTAT)
 
 # Presentation of the statistics calculated for each couple
 ##RES$STATISTIC <- data.frame(n11,post.H0,LB)
-##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellés ingénue
+##rownames(RES$STATISTIC) <- paste(L[,1],L[,2]) # liste des libellÃ©s ingÃ©nue
 ##colnames(RES$STATISTIC) <- c("count","postH0","Lower Bound")
 
 # STATISTICAL VALUE TO BE CONSIDERED (used in function compare)

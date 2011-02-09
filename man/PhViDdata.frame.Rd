@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{PhViDdata.frame}
 \alias{PhViDdata.frame}
 \docType{data}
@@ -14,7 +15,5 @@ This is a simulated data set aiming at mimicking the French database coded in AT
     \item{\code{n11}}{a numeric vector indicating the number of spontaneous reports of the corresponding couple.}
   }
 }
-\references{
-Ahmed I, Haramburu F, Fourrier-Reglat A, Thiessard F,  Kreft-Jais C, Miremont-Salame G, Begaud B, Tubert-Bitter P, Bayesian Pharmacovigilance Signal Detection Methods Revisited in a Multiple Comparison Setting, Statistics in Medicine, accepted.
-}
 \keyword{datasets}
+\author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}
