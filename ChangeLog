@@ -13,6 +13,10 @@ CHANGES IN PhViD 1.03
 	o typo in GPS help file (thanks to Brock Stewart) log(lambda,2)     
 	o dealing with encodage issues. All files are encoded in UTF-8               	
 
+CHANGES IN PhViD 1.04
+
+	o compression of the data folder for the compilation : R CMD build --resave-data PhViD 
+
 
 
 
