@@ -54,7 +54,7 @@ PhViDdata <- as.PhViD(PhViDdata.frame)
 res <- ROR(PhViDdata, MIN.n11 = 3)
 
 # Decision rule proposed by van Puijenbroek et al. (2002)
-res2 <- ROR(PhViDdata, MIN.n11 = 1, DECISION=3, DECISION.THRES=0, RANKSTAT=2)
+# res2 <- ROR(PhViDdata, MIN.n11 = 1, DECISION=3, DECISION.THRES=0, RANKSTAT=2)
 ## end
 }
 

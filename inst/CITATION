@@ -6,12 +6,12 @@ vers <- paste("R package version", meta$Version)
 
 citEntry(
 	entry = "Manual",
-	title = "PhViD: a R package for PharmacoVigilance signal Detection",
+	title = "PhViD: an R package for PharmacoVigilance signal Detection",
     	author = personList(as.person("I. Ahmed"), as.person("A. Poncet")),
     	year = year,
     	note = vers,
 	textVersion = paste("I. Ahmed & A. Poncet (", year,
-"). PhViD: a R package for PharmacoVigilance signal Detection. ",
+"). PhViD: an R package for PharmacoVigilance signal Detection. ",
 vers, ".", sep="")
 )
 

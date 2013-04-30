@@ -53,7 +53,7 @@ Noren, GN, Bate A, Orre R, Edwards IR, Extending the methods used to screen the 
 ## start
 data(PhViDdata.frame)
 PhViDdata <- as.PhViD(PhViDdata.frame)
-res <- BCPNN(PhViDdata)
+# res <- BCPNN(PhViDdata)
 ## end
 }
 \author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}

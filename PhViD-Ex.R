@@ -3,7 +3,7 @@ source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
 library('PhViD')
 
-assign(".oldSearch", search(), pos = 'CheckExEnv')
+base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 cleanEx()
 nameEx("BCPNN")
 ### * BCPNN
@@ -68,7 +68,7 @@ flush(stderr()); flush(stdout())
 ## start
 data(PhViDdata.frame)
 PhViDdata <- as.PhViD(PhViDdata.frame)
-res <- PRR(PhViDdata)
+# res <- PRR(PhViDdata)
 ## end
 
 
@@ -113,14 +113,14 @@ PhViDdata <- as.PhViD(PhViDdata.frame)
 res <- ROR(PhViDdata, MIN.n11 = 3)
 
 # Decision rule proposed by van Puijenbroek et al. (2002)
-res2 <- ROR(PhViDdata, MIN.n11 = 1, DECISION=3, DECISION.THRES=0, RANKSTAT=2)
+# res2 <- ROR(PhViDdata, MIN.n11 = 1, DECISION=3, DECISION.THRES=0, RANKSTAT=2)
 ## end
 
 
 
 ### * <FOOTER>
 ###
-cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
+base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
 grDevices::dev.off()
 ###
 ### Local variables: ***

@@ -5,7 +5,7 @@
 \docType{package}
 \title{PhViD: a R package for PharmacoVigilance signal Detection}
 \description{
-The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. These functions can be used as standard R functions or through an user friendly interface (\code{PhViD.gui}). For the frequentist methods, the package requires the LBE procedure that is stored in the Bioconductor website \url{http://bioconductor.org/}. LBE can be installed by entering \cr
+The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. For the frequentist methods, the package requires the LBE procedure that is stored in the Bioconductor website \url{http://bioconductor.org/}. LBE can be installed by entering \cr
 \code{source("http://bioconductor.org/biocLite.R")} \cr
 \code{biocLite("LBE")} \cr
 in the R console.

@@ -18,5 +18,6 @@ CHANGES IN PhViD 1.04
 	o compression of the data folder for the compilation : R CMD build --resave-data PhViD 
 
 
-
+CHANGES IN PhViD 1.06
+  o I removed the graphical interface as it generated too many warnings during the package building...
 

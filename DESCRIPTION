@@ -1,17 +1,16 @@
 Package: PhViD
 Type: Package
 Title: PhViD: an R package for PharmacoVigilance signal Detection.
-Version: 1.0.4
-Date: 2012-03-19
+Version: 1.0.6
+Date: 2013-04-30
 Author: Ismaïl Ahmed & Antoine Poncet
 Maintainer: Ismaïl Ahmed <ismail.ahmed@inserm.fr>
-Depends: R (>= 2.10), LBE, MCMCpack, tcltk
+Depends: R (>= 2.10), LBE, MCMCpack
 Description: PhViD contains several pharmacovigilance signal detection
-        methods extended to the multiple comparison setting. These
-        functions can be used as standard R functions or through an
-        user friendly interface (PhViD.gui())
+        methods extended to the multiple comparison setting.
 License: GPL-2
 Encoding: UTF-8
-Packaged: 2012-03-19 15:22:48 UTC; isma
+Packaged: 2013-04-30 13:19:02 UTC; isma
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2012-03-19 15:47:54
+Date/Publication: 2013-04-30 18:52:50

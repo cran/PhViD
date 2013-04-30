@@ -53,7 +53,7 @@ van Puijenbroek EP, Bate A, Leufkens HGM, Lindquist M, Orre R and Egberts ACG, A
 ## start
 data(PhViDdata.frame)
 PhViDdata <- as.PhViD(PhViDdata.frame)
-res <- PRR(PhViDdata)
+# res <- PRR(PhViDdata)
 ## end
 }
 \author{\enc{Ismaïl}{Ismail} Ahmed & Antoine Poncet}
