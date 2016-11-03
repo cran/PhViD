@@ -7,6 +7,8 @@ exportPattern(".")
 # Import all packages listed as Imports or Depends
 import(
   LBE,
-  MCMCpack,
-  tcltk
+  MCMCpack
 )
+
+importFrom("stats", "dnbinom", "fisher.test", "nlm", "pgamma",
+             "pnbinom", "pnorm", "qnorm", "xtabs")

@@ -3,7 +3,7 @@
 \alias{PhViD-package}
 \alias{PhViD}
 \docType{package}
-\title{PhViD: a R package for PharmacoVigilance signal Detection}
+\title{PhViD: an R package for PharmacoVigilance signal Detection}
 \description{
 The \code{PhViD-package} proposes the main pharmacovigilance signal detection methods extended to the multiple comparison setting. For the frequentist methods, the package requires the LBE procedure that is stored in the Bioconductor website \url{http://bioconductor.org/}. LBE can be installed by entering \cr
 \code{source("http://bioconductor.org/biocLite.R")} \cr

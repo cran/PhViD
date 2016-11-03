@@ -19,5 +19,13 @@ CHANGES IN PhViD 1.04
 
 
 CHANGES IN PhViD 1.06
+
   o I removed the graphical interface as it generated too many warnings during the package building...
 
+CHANGES IN PhViD 1.07
+
+  o RAS
+  
+CHANGES IN PhViD 1.08
+
+  o Correction of a mistake in the marginal likelihood of GPS (in case of TRONC = T) thanks to John Ihrie

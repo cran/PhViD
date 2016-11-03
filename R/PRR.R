@@ -26,7 +26,6 @@ function(DATABASE, RR0 = 1, MIN.n11 = 1, DECISION = 1, DECISION.THRES = 0.05, RA
 #                 2 = CI Lower Bound (95%) of ln(PRR)
 
 
-require("LBE")
 if (RANKSTAT==2 & DECISION == 1) stop("The FDR can't be used as decision rule with this ranking Statistic")
 # Initialization              
 DATA <- DATABASE$data

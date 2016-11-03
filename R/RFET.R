@@ -25,7 +25,7 @@ function(DATABASE, OR0 = 1, MIN.n11 = 1, DECISION = 1, DECISION.THRES=0.05, MID.
 
 #OR0 <-c(1,2,5) ## seuil pour la definition des associations
 
-require("LBE")
+
 
 
 # Initialization              
@@ -67,7 +67,6 @@ logRFET <- log(n11 * n00 /(n10 * n01))
   }
 
   if (MID.PVAL == TRUE) { # option MID.PVAL
-    require(MCMCpack)
     for (p in 1 : Nb.Cell) {
 	   pval.fish.uni[p] <- pval.fish.uni[p] - 0.5 * dnoncenhypergeom(x = n11[p], n1 = n11[p] + n01[p] , n2 = n10[p] + n00[p], m1 = n11[p] + n10[p], psi = OR0)
     }

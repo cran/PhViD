@@ -49,7 +49,6 @@ if (MC == FALSE) {
 }
 
 if (MC == TRUE) { # Advanced option MC
-  require(MCMCpack)
   n1. <- n11 + n10
   n.1 <- n11 + n01
   Nb_Obs <- length(n11)
