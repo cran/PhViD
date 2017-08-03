@@ -1,5 +1,5 @@
 `as.PhViD` <-
-function(DATA.FRAME,MARGIN.THRES=1){
+function(DATA.FRAME,MARGIN.THRES=1,CONT.CORR=NA){
 ## Fonction qui va permettre de calculer le nombre de notifications pour chaque "médicament" et "effet indésirable".
 
 ## FILE :         Emplacement + nom du fichier
@@ -36,6 +36,7 @@ data[,3] <- as.double(DATA.FRAME[,3])
 coln <- names(data) # On stocke le nom des colonnes
 names(data)[3] <-"n11"
 data_cont <- xtabs(n11 ~ .,data=data) # "matrice" de contingence
+if (!is.na(CONT.CORR)) data_cont <- data_cont + CONT.CORR # add in continuity correction if specified
 n1._mat <- apply(data_cont,1,sum)     # marges des lignes
 n.1_mat <- apply(data_cont,2,sum)     # marges des colonnes
 
