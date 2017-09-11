@@ -26,17 +26,27 @@
         E_c <- n1._c * n.1_c / N
         n11_c <- as.vector(data_cont)
         
-        p_out <-suppressWarnings(nlm(.lik2NB, p=PRIOR.INIT, n11=n11_c, E=E_c, iterlim=500))
+        p_out <- suppressWarnings(nlminb(PRIOR.INIT, .lik2NB, 
+                                         n11 = n11_c, E = E_c,
+                                         control = list(iter.max = 500),
+                                         lower = c(NA, NA, NA, NA, 1e-3),
+                                         upper = c(NA, NA, NA, NA, 0.999)))
       }
       
       # alternative tenant compte de la troncature
       if (TRONC == TRUE){
         tronc <- TRONC.THRES - 1  # si l'utilisateur a décidé de tronquer sa base
-        p_out <-suppressWarnings(nlm(.likTronc2NB, p=PRIOR.INIT, n11=n11[n11>=TRONC.THRES], E=E[n11>=TRONC.THRES], tronc,iterlim=500))
+        p_out <- suppressWarnings(nlminb(PRIOR.INIT, .likTronc2NB,
+                                         n11 = n11[n11 >= TRONC.THRES],
+                                         E = E[n11 >= TRONC.THRES],
+                                         tronc=tronc,
+                                         control = list(iter.max = 500),
+                                         lower = c(NA, NA, NA, NA, 1e-3),
+                                         upper = c(NA, NA, NA, NA, 0.999)))
       }
       
-      PRIOR.PARAM <-p_out$estimate
-      code.convergence <- p_out$code
+      PRIOR.PARAM <- as.numeric(p_out$par)
+      code.convergence <- p_out$convergence
     }
     
     # Algorithm allowing to conserve only the couples presenting the minimal nb of notifications entered by the user
