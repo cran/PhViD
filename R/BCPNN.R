@@ -40,7 +40,7 @@ if (MC == FALSE) {
   q1  <- 1 + n.1
   q2  <- 1 + N - n.1
   r1  <- 1 + n11
-  r2b <- N - n11 -1 + (2+N)^2/(q1*p1)
+  r2b <- 3 + N - n11
   EICb <- log(2)^(-1) * (digamma(r1) - digamma(r1+r2b) - (digamma(p1) - digamma(p1+p2) + digamma(q1) - digamma(q1+q2)))
   VICb <- log(2)^(-2) * (trigamma(r1) - trigamma(r1+r2b) + (trigamma(p1) - trigamma(p1+p2) + trigamma(q1) - trigamma(q1+q2)))
   post.H0 <- pnorm(log(RR0),EICb,sqrt(VICb))
